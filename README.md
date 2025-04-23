@@ -34,3 +34,32 @@ http://localhost:4173
 npm run dev -	Roda o app em modo desenvolvimento
 npm run build -	Gera os arquivos finais (prod)
 npm run preview	- Testa o build gerado em servidor local
+
+
+💥 O que o build faz, na prática?
+
+- Agrupa todos os arquivos (bundling)
+- Junta todos os seus .js, .css, imagens etc. em poucos arquivos otimizados.
+
+- Remove código desnecessário (tree-shaking)
+- Só inclui no build final o que realmente está sendo usado.
+
+- Minifica tudo
+- Remove espaços, comentários e encurta nomes de variáveis.
+
+Exemplo:
+
+function saudacao(nome) {
+  return "Olá, " + nome;
+}
+
+Vira algo como:
+
+function a(n){return"Olá, "+n}
+
+- Prepara os caminhos para produção
+- Corrige as rotas de arquivos, ajusta URLs, e se precisar, insere hashes nos nomes (pra cache).
+
+- Coloca tudo na pasta dist/
+- Essa pasta é o que você sobe no servidor ou deploya no GitHub Pages, por exemplo.
+
